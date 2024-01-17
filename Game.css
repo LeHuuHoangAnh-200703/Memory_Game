@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Fruktur:ital@1&family=Kanit&family=Kaushan+Script&family=Lilita+One&family=Luckiest+Guy&family=Mr+Dafoe&family=Open+Sans:wght@600&family=Orbitron:wght@600&family=Roboto+Slab&family=Staatliches&family=Yellowtail&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #4169E1;
+    font-family: 'Lilita One';
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #6495ED;
+    padding: 40px 60px;
+    gap: 30px;
+}
+
+.container .name_game {
+    color: #fff;
+    font-size: 40px;
+    text-shadow: 4px 4px 1px rgba(0, 0, 0, 0.6);
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.container .reset {
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-family: 'Lilita One';
+    color: #4169E1;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: .5s;
+    cursor: pointer;
+    box-shadow:inset 0 -5px 1px #184deb,
+    0 5px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.container .reset:focus {
+    box-shadow: none;
+    transform: translateY(10px);
+    color: #000;
+}
+
+.container .game {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 320px;
+    height: 300px;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    background: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    transform: rotateY(180deg);
+    transition: .25s;
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: rotateY(0deg);
+    background: #1d51ec;
+    transition: .25s;
+    backface-visibility: hidden;
+}
+
+.boxOpen:after,
+.boxMatch:after {
+    transform: rotateY(180deg);
+}
